@@ -1,0 +1,135 @@
+.size-half {
+  width: 30px;
+  height: 160px;
+}
+
+.nest {
+  margin: 160px;
+  padding: 15px;
+  background: pink;
+}
+
+.nest .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nest .txt {
+  font-size: 14px;
+  color: #333;
+}
+
+.nest .txt span {
+  color: red;
+}
+
+.nest__title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nest__txt {
+  font-size: 14px;
+  color: #333;
+}
+
+.nest__txt span {
+  color: red;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: purple;
+}
+
+.group {
+  height: 40px;
+}
+
+.group.is-50 {
+  height: 50px;
+}
+
+.group__10 {
+  height: 10px;
+}
+
+.group__20 {
+  height: 20px;
+}
+
+.is-100 .group {
+  height: 100px;
+}
+
+.box-1 {
+  width: 100px;
+  height: 100px;
+}
+
+.box-2 {
+  width: 300px;
+  height: 200px;
+}
+
+.box-3 {
+  width: 100%;
+  height: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .box-3 {
+    width: 20%;
+    height: 20%;
+  }
+}
+
+.extend-1, .extend-2, .extend-3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+
+.extend-2 {
+  font-size: 40px;
+}
+
+.extend-3 {
+  font-size: 30px;
+  color: green;
+}
+
+.button, .button--primary, .button--disabled {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px 0;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  background-color: skyblue;
+  color: #fff;
+  transition: width .3s ease;
+}
+
+.button:hover, .button--primary:hover, .button--disabled:hover {
+  width: 220px;
+}
+
+.button--primary {
+  background-color: red;
+}
+
+.button--disabled {
+  background-color: gray;
+}

@@ -1,0 +1,13 @@
+// 変数
+$base-font-color: #333;
+$base-width: 800px;
+
+
+body {
+  margin: 50px;
+  background-color: #ccc;
+
+  * {
+    box-sizing: border-box;
+  }
+}

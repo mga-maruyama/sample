@@ -1,0 +1,35 @@
+$__btn-width: 200px;
+
+// extend
+%_button {
+  display: block;
+  width: $__btn-width;
+  margin: 10px auto;
+  padding: 10px 0;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  background-color: skyblue;
+  color: #fff;
+  transition: width .3s ease;
+  &:hover {
+    width: $__btn-width + 20px;
+  }
+}
+
+.button {
+  @extend %_button;
+
+  &--primary {
+    @extend %_button;
+    background-color: red;
+  }
+
+  &--disabled {
+    @extend %_button;
+    background-color: gray;
+  }
+}
+
+
+

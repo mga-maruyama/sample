@@ -1,0 +1,145 @@
+// 変数
+// $変数名: 値;
+// 何度も使い分回すことができる
+// 値を変更したときは一括で変更ができる
+$base-color: #333;
+$size: 60px;
+$breakpoint: 768px;
+$border: 1px solid #999;
+
+// 演算
+// 変数と併用することで、柔軟に対応する使い方ができる
+.size-half {
+  width: $size / 2;
+  height: $size + 100px;
+}
+
+// 入れ子
+.nest {
+  margin: 100px + $size;
+  padding: $size / 4;
+  background: pink;
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: $base-color;
+  }
+  .txt {
+    font-size: 14px;
+    color: $base-color;
+
+    span {
+      color: red;
+    }
+  }
+
+  // BEMの命名規則と相性がよい
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    color: $base-color;
+  }
+
+  &__txt {
+    font-size: 14px;
+    color: $base-color;
+    span {
+      color: red;
+    }
+  }
+}
+
+// &（親参照セレクタ）
+// 入れ子内で、親になるクラス名を呼びたいときは、& を使います。
+a {
+  color: $base-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: purple;
+  }
+}
+
+// &（親参照セレクタ）
+// 入れ子内で、親になるクラス名を呼びたいときは、& を使います。
+.group {
+  height: 40px;
+
+  &.is-50 {
+    height: 50px;
+  }
+
+  &__10 {
+    height: 10px;
+  }
+
+  &__20 {
+    height: 20px;
+  }
+
+  .is-100 & {
+    height: 100px;
+  }
+}
+
+
+// mixin
+// まとまったスタイルを定義することができる機能。
+@mixin _sp {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin _box($width: 100px, $height: 100px) {
+  width: $width;
+  height: $height;
+}
+
+.box-1 {
+  @include _box;
+}
+
+.box-2 {
+  @include _box(300px, 200px);
+}
+
+.box-3 {
+  @include _box(100%, 50%);
+  @include _sp() {
+    @include _box(20%, 20%);
+  }
+}
+
+// extend
+// クラスを継承できる
+%_extend {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+}
+
+.extend-1 {
+  @extend %_extend;
+}
+
+.extend-2 {
+  @extend %_extend;
+  font-size: 40px;
+}
+
+.extend-3 {
+  @extend %_extend;
+  font-size: 30px;
+  color: green;
+}
+
+// パーシャル（分割）
+// アンダースコアから始まるファイルはコンパイルの対象外になる
+// 一つのファイルにすべてを書くよりも
+// 一定のルールでファイルを分割することで変更や修正など管理がしやすくなる
+// 分割したファイルは @import で読み込む
+@import '_button';

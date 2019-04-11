@@ -1,0 +1,82 @@
+body {
+  margin: 50px;
+  background-color: #ccc;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  margin: 0 auto 20px;
+}
+
+.card-wrap__item:nth-child(n+3) {
+  margin-top: 20px;
+}
+
+.card-wrap__item:nth-child(odd) {
+  margin-right: 20px;
+}
+
+/* --------------------------------------------------------- */
+.card {
+  width: 390px;
+  background-color: #ffffff;
+}
+
+.card__inner {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card__title {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card__group {
+  display: flex;
+}
+
+.card__img {
+  margin-right: 10px;
+}
+
+.card__txt {
+  font-size: 13px;
+  color: #333;
+}
+
+.button, .button--primary, .button--disabled {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px 0;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  background-color: skyblue;
+  color: #fff;
+  transition: width .3s ease;
+}
+
+.button:hover, .button--primary:hover, .button--disabled:hover {
+  width: 220px;
+}
+
+.button--primary {
+  background-color: red;
+}
+
+.button--disabled {
+  background-color: gray;
+}

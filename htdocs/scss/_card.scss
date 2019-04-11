@@ -1,0 +1,50 @@
+.card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: $base-width;
+  margin: 0 auto 20px;
+
+  &__item {
+    &:nth-child(n+3) {
+      margin-top: 20px;
+    }
+    &:nth-child(odd) {
+      margin-right: 20px;
+    }
+  }
+}
+
+
+/* --------------------------------------------------------- */
+.card {
+  width: ($base-width / 2) - 10px;
+  background-color: #ffffff;
+
+  &__inner {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 2px 2px 4px rgba(#000,.3);
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $base-font-color;
+  }
+
+  &__group {
+    display: flex;
+  }
+
+  &__img {
+    margin-right: 10px;
+  }
+
+  &__txt {
+    font-size: 13px;
+    color: $base-font-color;
+  }
+}
